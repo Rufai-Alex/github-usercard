@@ -2,6 +2,15 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+axios
+  .get("https://api.github.com/users/Rufai-Alex")
+  .then(response => {
+    console.log(response);
+  })
+
+  .catch(error => {
+    console.log(error);
+  });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -45,6 +54,37 @@ const followersArray = [];
 </div>
 
 */
+function createCard() {
+  const cardDiv = document.createElement("div");
+  const image = document.createElement("img");
+  const infoDiv = document.createElement("div");
+  const cardH3 = document.createElement("h3");
+  const userP = document.createElement("p");
+  const locationP = document.createElement("p");
+  const profileP = document.createElement("p");
+  const ancortag = document.createElement("a");
+  const followP = document.createElement("p");
+  const followingP = document.createElement("p");
+  const bioP = document.createElement("p");
+
+  cardDiv.append(image);
+  cardDiv.append(infoDiv);
+  infoDiv.append(cardH3);
+  infoDiv.append(userP);
+  infoDiv.append(locationP);
+  infoDiv.append(profileP);
+  infoDiv.append(ancortag);
+  infoDiv.append(followP);
+  infoDiv.append(followingP);
+  infoDiv.append(bioP);
+
+  cardDiv.classList.add("card");
+  infoDiv.classList.add("card-info");
+  cardH3.classList.add("name");
+  userP.classList.add("username");
+  return cardDiv;
+}
+console.log(createCard());
 
 /* List of LS Instructors Github username's: 
   tetondan
